@@ -4,7 +4,7 @@ TaskFlow est une application web moderne de gestion de tâches conçue pour amé
 
 L'application est disponible ici :
 
-👉 [https://xinoxti.github.io/taskflow/](https://xinoxti.github.io/taskflow/)
+👉 [https://kyliandetienne.github.io/taskflow/](https://kyliandetienne.github.io/taskflow/)
 
 ---
 
@@ -46,7 +46,7 @@ L'application est disponible ici :
 
 TaskFlow peut être utilisé directement depuis GitHub Pages :
 
-👉 [https://xinoxti.github.io/taskflow/](https://xinoxti.github.io/taskflow/)
+👉 [https://kyliandetienne.github.io/taskflow/](https://kyliandetienne.github.io/taskflow/)
 
 Aucune installation n'est nécessaire.
 
@@ -64,7 +64,7 @@ Grâce aux règles de sécurité Supabase, chaque utilisateur connecté accède 
 ### 1. Cloner le projet
 
 ```bash
-git clone https://github.com/xinoxti/taskflow.git
+git clone https://github.com/kyliandetienne/taskflow.git
 ```
 
 ### 2. Entrer dans le dossier
