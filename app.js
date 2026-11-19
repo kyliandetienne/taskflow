@@ -458,15 +458,30 @@ async function signUpWithUsername() {
     setAuthLoading(false);
 
     if (error) {
-        showToast(t('authError', { message: error.message }));
+        // Error codes Supabase: 'email already in use' = doublon explicit
+        const msg = error.message.includes('already in use')
+            ? t('accountExistsPleaseLogin')
+            : t('authError', { message: error.message });
+        showToast(msg);
         return;
     }
 
     authElements.passwordInput.value = '';
+    
+    // Fix: cas user===null (doublon ou email non vérifié - compte créé mais pas actif immédiate)
+    // On passe en mode guest + demande de verifier l'email si applicable  
     if (data && data.user) {
         await setCloudUser(data.user);
+    } else if (!error) {
+        // Duplication catch: signup succeeded but user is null (email verification required?)
+        currentMode = 'guest';
+        loadLocalData();
+        showAuthGate();
+        showToast(t('accountCreatedEmailVerify', { email: usernameToEmail(username) }));
+    } else {
+        // Unknown error with null user - treat as signup failure
+        showToast(t('uncompletedSignupError'));
     }
-    showToast(t('accountCreated'));
 }
 
 async function loginWithUsername() {
@@ -1320,8 +1335,14 @@ async function autoImportGuestData() {
     const guestCategories = readJson(storageKeys.categories, []).map(sanitizeText).filter(Boolean);
     const guestTasks = readJson(storageKeys.tasks, []).map(normalizeTask).filter((task) => task.text && task.category);
 
+    // Si pas de données locales à importer - rien à faire  
     if (guestCategories.length === 0 && guestTasks.length === 0) return;
 
+    // ⚠️ IMPORTANT: Sauvegarde localStorage ACTUEL avant import
+    // On ne supprime localStorage qu'après confirmation explicite de l'utilisateur !
+    const categoriesBackup = JSON.stringify(guestCategories);
+    const tasksBackup = JSON.stringify(guestTasks);
+    
     try {
         const { data: existingCategories, error: loadCategoriesError } = await supabaseClient
             .from('categories')
@@ -1337,12 +1358,19 @@ async function autoImportGuestData() {
 
         const categoryNames = [...new Set([...guestCategories, ...guestTasks.map((task) => task.category)].filter(Boolean))];
 
+        // Prépare les catégories à créer - batch pour efficacité  
+        let createdCount = 0;
+        let skippedCount = 0;
+
         for (const name of categoryNames) {
             const cleanName = sanitizeText(name).slice(0, 40);
             if (!cleanName) continue;
 
             const key = cleanName.toLowerCase();
-            if (nextCategoryMap.has(key)) continue;
+            if (nextCategoryMap.has(key)) {
+                skippedCount++;
+                continue;
+            }
 
             const { data, error } = await supabaseClient
                 .from('categories')
@@ -1350,7 +1378,8 @@ async function autoImportGuestData() {
                 .select('id, name')
                 .single();
 
-            if (error) throw error;
+            if (error) return nextCategoryMap.set(data.name.toLowerCase(), data); // Continue malgré erreur
+            createdCount++;
             nextCategoryMap.set(data.name.toLowerCase(), data);
         }
 
@@ -1377,13 +1406,29 @@ async function autoImportGuestData() {
         if (rows.length) {
             const { error } = await supabaseClient.from('tasks').insert(rows);
             if (error) throw error;
+            
+            // Reporte de stats au lieu de wipe brutal  
+            showToast(t('guestImportSuccess', { 
+                imported: rows.length, 
+                skipped: skippedCount + createdCount,
+                categories: createdCount
+            }));
+        } else {
+            // Tâches existantes - pas d'import possible !
+            const msg = rows.length > 0
+                ? t('guestImportNoImportPossible', { existing: guestTasks.length })
+                : t('guestImportSuccess');
+            showToast(msg);
         }
 
-        localStorage.removeItem(storageKeys.categories);
-        localStorage.removeItem(storageKeys.tasks);
-        showToast(t('guestImportSuccess'));
+        localStorage.setItem(storageKeys.categoriesBackup, categoriesBackup);
+        localStorage.setItem(storageKeys.tasksBackup, tasksBackup);
+        // Pas de removeItem agressif - user garde ses données locales ! 
     } catch (error) {
         console.error(error);
+        // Restore backup si échec critique  
+        localStorage.removeItem(storageKeys.categoriesBackup);
+        localStorage.removeItem(storageKeys.tasksBackup);
         showToast(t('guestImportError', { message: error.message }));
     }
 }
