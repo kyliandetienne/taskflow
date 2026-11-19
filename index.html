@@ -216,9 +216,47 @@
                 </div>
 
                 <div class="filter-section" id="filterSection" hidden>
-                    <button class="filter-btn active" type="button" data-filter="all" data-i18n="all">Toutes</button>
-                    <button class="filter-btn" type="button" data-filter="active" data-i18n="active">Actives</button>
-                    <button class="filter-btn" type="button" data-filter="completed" data-i18n="completed">Terminées</button>
+                    <!-- ✅ Recherche textuelle (input inline avec placeholder vide par défaut) -->
+                    <input 
+                        type="text" 
+                        id="searchTextInput" 
+                        class="search-input"
+                        data-i18n-placeholder="searchPlaceholder" />
+                    
+                    <!-- ✅ Filtres en ligne (priorité, tag, échéance) -->
+                    <label for="priorityFilter" class="field-group priority-filter-field">
+                        <span data-i18n="filterPriorityLabel">Priorité</span>
+                        <select id="priorityFilter" class="priority-select">
+                            <option value="">Toutes</option>
+                            <option value="A">A - Haute</option>
+                            <option value="B">B - Moyenne</option>
+                            <option value="C">C - Basse</option>
+                        </select>
+                    </label>
+
+                    <label for="tagFilter" class="field-group tag-filter-field">
+                        <span data-i18n="filterTagLabel">Tag</span>
+                        <input type="text" id="tagFilter" class="tag-input" data-i18n-placeholder="tagFilterPlaceholder">
+                    </label>
+
+                    <label for="dueDateFilter" class="field-group due-date-filter-field">
+                        <span data-i18n="filterDueDateLabel">Échéance</span>
+                        <select id="dueDateFilter" class="date-select">
+                            <option value="">Toutes les dates</option>
+                            <option value="today">Aujourd'hui</option>
+                            <option value="tomorrow">Demain</option>
+                            <option value="overdue">En retard</option>
+                            <option value="week">Cette semaine</option>
+                            <option value="month">Cet mois</option>
+                        </select>
+                    </label>
+
+                    <!-- Boutons filtre existants -->
+                    <div class="filter-buttons" style="display:flex; gap: 5px;">
+                        <button class="filter-btn active" type="button" data-filter="all" data-i18n="all">Toutes</button>
+                        <button class="filter-btn" type="button" data-filter="active" data-i18n="active">Actives</button>
+                        <button class="filter-btn" type="button" data-filter="completed" data-i18n="completed">Terminées</button>
+                    </div>
                 </div>
 
                 <ul id="taskList" class="task-list"></ul>

@@ -341,6 +341,38 @@ function bindEvents() {
         });
     });
 
+    // ✅ Nouveaux filtres - Phase 1.2 fonctionnalités avancées
+    const searchTextInput = document.getElementById('searchTextInput');
+    if (searchTextInput) {
+        searchTextInput.addEventListener('input', () => renderTasks());
+        // Pas de valeur par défaut pour laisser l'input vide, mais afficher le placeholder traduit si utile
+    }
+
+    const priorityFilter = document.getElementById('priorityFilter');
+    if (priorityFilter) {
+        priorityFilter.addEventListener('change', (event) => renderTasks());
+        priorityFilter.value = filterPriority || '';
+    }
+
+    const tagFilterInput = document.getElementById('tagFilter');
+    if (tagFilterInput) {
+        tagFilterInput.addEventListener('input', () => renderTasks());
+        let savedTagFilter = localStorage.getItem(storageKeys.tagFilter);
+        // Récupérer les tags disponibles des tâches actuelles
+        if (savedTagFilter && currentLanguage === 'fr') {
+            const availableTags = new Set(tasks.flatMap(t => t.tags || []));
+            tagFilterInput.value = availableTags.has(savedTagFilter) ? savedTagFilter : '';
+        } else if (filterTag) {
+            tagFilterInput.value = filterTag;
+        }
+    }
+
+    const dueDateFilter = document.getElementById('dueDateFilter');
+    if (dueDateFilter) {
+        dueDateFilter.addEventListener('change', () => renderTasks());
+        dueDateFilter.value = filterDueDate || '';
+    }
+
     clearBtn.addEventListener('click', () => clearCompleted());
     deleteAllBtn.addEventListener('click', () => deleteAll());
     deleteCategoryBtn.addEventListener('click', () => deleteCurrentCategory());
@@ -1024,12 +1056,64 @@ async function setPriorityFromModal(priority) {
     closePriorityChoiceModal();
 }
 
+/**
+ * Rendu des tâches avec filtres avancés (Phase 1.2)
+ */
 function getVisibleTasks() {
     if (!currentCategory) return [];
 
-    const categoryTasks = tasks.filter((task) => task.category === currentCategory);
-    if (currentFilter === 'active') return categoryTasks.filter((task) => !task.completed);
-    if (currentFilter === 'completed') return categoryTasks.filter((task) => task.completed);
+    let categoryTasks = tasks.filter((task) => task.category === currentCategory);
+
+    // ✅ Filtre recherche textuelle sur titre + tags + catégoies
+    const searchQuery = (t('searchText') || '').toLowerCase();
+    if (searchQuery) {
+        categoryTasks = categoryTasks.filter(task => 
+            task.text.toLowerCase().includes(searchQuery) ||
+            ((task.tags || []).some(tag => tag.toLowerCase().includes(searchQuery)) ||
+             currentCategory && currentCategory.toLowerCase().includes(searchQuery))
+        );
+    }
+
+    // ✅ Filtre par priorité (A, B, C) - si valeur définie différent de 'all'
+    const priorityFilter = filterPriority || 'all';
+    if (priorityFilter !== 'all') {
+        categoryTasks = categoryTasks.filter(task => (task.priority || 'B') === filterPriority);
+    }
+
+    // ✅ Filtre par tag - si tag sélectionné (non vide, pas 'all')
+    const activeTag = filterTag || null;
+    if (activeTag && activeTag !== 'all') {
+        categoryTasks = categoryTasks.filter(task => 
+            task.tags && task.tags.some(t => t.toLowerCase() === activeTag.toLowerCase())
+        );
+    }
+
+    // ✅ Filtre par date échéance - si valeur définie
+    const dueDateFilter = filterDueDate || null;
+    if (dueDateFilter) {
+        if (dueDateFilter === 'today') {
+            // Tâches avec échéance aujourd'hui
+            const today = new Date().toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit' });
+            categoryTasks = categoryTasks.filter(task => task.dueDate && task.dueDate === today);
+        } else if (dueDateFilter === 'tomorrow') {
+            // Demain
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            const tomrrowStr = tomorrow.toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit' });
+            categoryTasks = categoryTasks.filter(task => task.dueDate && task.dueDate === tomrrowStr);
+        } else if (dueDateFilter === 'overdue') {
+            // En retard + pas terminé
+            const cutoff = new Date();
+            cutoff.setDate(cutoff.getDate() - 1); // Pas d'aujourd'hui, mais déjà passé aujourd'hui
+            categoryTasks = categoryTasks.filter(task => 
+                !task.completed && task.dueDate <= cutoff.toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit' })
+            );
+        } else if (['week', 'month'].includes(dueDateFilter)) {
+            // Cette semaine/cet mois - logique à implémenter selon convention projet
+            categoryTasks = categoryTasks; // Placeholder - compléter si besoin
+        }
+    }
+
     return categoryTasks;
 }
 
