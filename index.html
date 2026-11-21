@@ -313,6 +313,60 @@
         </div>
     </div>
 
+    <!-- ✅ Modal édition tâche - Phase 1.2 -->
+    <div id="editTaskModal" class="modal task-modal" aria-hidden="true" role="dialog" aria-labelledby="editTaskModalTitle">
+        <div class="modal-backdrop" data-close-modal></div>
+        <div class="modal-card"> 
+            <!-- ✅ Modal header -->
+            
+    <h2 id="editTaskModalTitle" data-i18n="editTaskTitle">Éditer une tâche</h2>
+            <p id="editTaskDescription" class="muted-text"></p>
+            
+            <!-- ✅ Form éditeur tâche avec tous les champs modifiables -->
+            <div class="edit-form">
+                <div class="form-group">
+                    <label for="editTaskText" data-i18n="taskLabel">Tâche</label>
+                    <input type="text" id="editTaskText" class="task-input edit-text-field" data-i18n-placeholder="taskPlaceholder" placeholder="" maxlength="160" />
+                </div>
+                
+                <div class="form-group">
+                    <p class="field-kicker" style="margin-bottom:5px; margin-left: 2px;" data-i18n="priorityLabel">Priorité</p>
+                    <select id="editTaskPriority" class="priority-select edit-priority-field">
+                        <option value="A" data-i18n="priorityHigh">A - Haute</option>
+                        <option value="B" data-i18n="priorityMedium" selected>B - Moyenne</option>
+                        <option value="C" data-i18n="priorityLow">C - Basse</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <p class="field-kicker" style="margin-bottom:5px; margin-left: 2px;" data-i18n="tagsLabel">Tags</p>
+                    <input type="text" id="editTaskTags" class="tags-input edit-tags-field" placeholder='ex: urgent, maison, projet...' maxlength="100" />
+                </div>
+
+                <div class="form-group due-date-field">
+                    <label for="editTaskDueDate" data-i18n="dueDateLabel">Échéance</label>
+                    <input type="date" id="editTaskDueDate" class="date-input edit-due-date-field" />
+                </div>
+
+                <div class="form-group due-time-field">
+                    <p class="field-kicker" style="margin-bottom:5px; margin-left: 2px;" data-i18n="dueTimeLabel">Heure</p>
+                    <select id="editTaskDueTime" class="time-input edit-due-time-field"></select>
+                </div>
+
+                <div class="form-group meta-group field-group">
+                    <span data-i18n="completedLabel">Terminée</span>
+                    <input type="checkbox" id="editTaskCompleted" class="completed-checkbox edit-completed-field" />
+                </div>
+            </div>
+
+            <!-- ✅ Modal actions -->
+            <div class="modal-actions">
+                <button id="saveEditBtn" class="small-primary-btn save-btn-edits full-width" type="button" data-i18n="save">Enregistrer</button>
+                <button id="closeEditModal" class="ghost-btn full-width" type="button" data-i18n="cancel">Annuler</button>
+            </div>
+        </div>
+    </div>
+
     <div id="toastContainer" class="toast-container" aria-live="polite"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>

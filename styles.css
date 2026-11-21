@@ -639,6 +639,37 @@ button:active {
     /* Les boutons filtres prennent toute la largeur sur mobile si besoin */
 }
 
+/* ✅ Modal édition tâche - Phase 1.2 styles */
+.task-modal {
+    max-width: 560px;
+}
+
+.edit-form .form-group {
+    margin-bottom: 10px;
+}
+
+.edit-form label,
+.edit-form p[data-i18n] {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text);
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.edit-form input[type="text"],
+.edit-form input[type="date"],
+.edit-form select {
+    width: 100%;
+    padding: 10px 12px;
+    box-sizing: border-box;
+}
+
+.edit-completed-field {
+    margin-top: 8px;
+    accent-color: var(--success);
+}
+
 .task-list {
     display: grid;
     gap: 12px;
