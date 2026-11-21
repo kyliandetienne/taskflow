@@ -580,6 +580,96 @@ button:active {
     border-color: transparent;
 }
 
+/* ✅ Styles nouveaux filtres - Phase 1.2 */
+.search-input {
+    flex: 1 1 auto;
+    min-width: 180px;
+    font-size: 0.95rem;
+}
+
+.search-input:focus,
+.priority-select:focus,
+.due-date-filter-field select:focus,
+.tag-input:focus {
+    border-color: rgba(6, 182, 212, 0.72);
+    box-shadow: 0 0 0 4px rgba(6, 182, 212, 0.13);
+}
+
+.priority-filter-field,
+.tag-filter-field,
+.due-date-filter-field {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start; /* align gauche */
+    gap: 5px;
+    font-size: 0.8rem;
+    min-width: 85px;
+}
+
+.priority-select,
+.due-date-filter-field select {
+    width: 100%;
+    padding: 9px 10px;
+    font-size: 0.9rem;
+}
+
+.tag-input {
+    width: 100%;
+    padding: 8px 9px;
+    font-size: 0.9rem;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 5px;
+    margin-top: 2px;
+}
+
+/* ✅ Responsive : empiler sur petit écran */
+@media (max-width: 640px) {
+    .search-input {
+        min-width: 140px; /* plus compact mobile */
+    }
+    
+    .filter-buttons {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    
+    /* Les boutons filtres prennent toute la largeur sur mobile si besoin */
+}
+
+/* ✅ Modal édition tâche - Phase 1.2 styles */
+.task-modal {
+    max-width: 560px;
+}
+
+.edit-form .form-group {
+    margin-bottom: 10px;
+}
+
+.edit-form label,
+.edit-form p[data-i18n] {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text);
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.edit-form input[type="text"],
+.edit-form input[type="date"],
+.edit-form select {
+    width: 100%;
+    padding: 10px 12px;
+    box-sizing: border-box;
+}
+
+.edit-completed-field {
+    margin-top: 8px;
+    accent-color: var(--success);
+}
+
 .task-list {
     display: grid;
     gap: 12px;

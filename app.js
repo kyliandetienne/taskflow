@@ -94,24 +94,73 @@ const translations = {
 
 Object.assign(translations.fr, {
     accountKicker: 'Compte', authTitle: 'Connexion cloud ou mode invité', guestModeText: 'Vous utilisez le mode invité. Les tâches restent dans ce navigateur.', guestMode: 'Invité', cloudMode: 'Cloud', usernameLabel: 'Utilisateur', usernamePlaceholder: 'exemple: jean', passwordLabel: 'Mot de passe', passwordPlaceholder: 'Mot de passe', login: 'Se connecter', signup: 'Créer un compte', continueGuest: 'Continuer en invité', logout: 'Se déconnecter', importGuest: 'Importer les tâches invitées', welcome: 'Bienvenue, {username}', cloudModeText: 'Connecté en mode cloud avec Supabase.', accountCreated: 'Compte créé et connecté.', loginSuccess: 'Connexion réussie.', logoutSuccess: 'Déconnexion réussie.', guestReady: 'Mode invité activé.', invalidUsername: 'Utilisateur invalide : 3 à 24 caractères, lettres, chiffres ou underscore uniquement.', invalidPassword: 'Le mot de passe doit contenir au moins 6 caractères.', authError: 'Erreur de connexion : {message}', cloudLoadError: 'Impossible de charger les données cloud.', cloudSaveError: 'Erreur lors de la sauvegarde cloud.', importDone: 'Tâches invitées importées dans le compte cloud.', importEmpty: 'Aucune tâche invitée à importer.', categorySuggestion: 'Exemples : Personnel / Travail / Projets', dueTimeLabel: 'Heure', noTime: 'Sans heure', dueDateInPast: 'Impossible de créer une tâche avec une échéance passée.', dueTodayNeedsTime: "Pour aujourd'hui, ajoutez une heure future.", dueTimeInPast: "L'heure choisie est déjà passée.", dueAt: 'Échéance', loading: 'Chargement...', deleteAccount: 'Supprimer mon compte', deleteAccountConfirm: 'Voulez-vous vraiment supprimer votre compte ? Cette action supprimera définitivement vos tâches cloud.', deleteAccountSuccess: 'Compte supprimé avec succès.', deleteAccountError: 'Erreur lors de la suppression du compte : {message}', guestImportSuccess: 'Tâches invitées importées automatiquement dans le compte cloud.', guestImportError: 'Erreur lors de l’import automatique : {message}'
+,
+    editTaskTitle: 'Éditer une tâche', taskLabel: 'Tâche', priorityLabel: 'Priorité', tagsLabel: 'Tags', completedLabel: 'Terminée', searchPlaceholder: 'Rechercher…', filterPriorityLabel: 'Priorité', filterTagLabel: 'Tag', filterDueDateLabel: 'Échéance', tagFilterPlaceholder: 'Filtrer par tag…'
+,
+    editTask: 'Éditer',
+
+    invalidPriority: 'Priorité invalide',
+    taskUpdated: 'Tâche modifiée avec succès',
 });
 Object.assign(translations.en, {
     accountKicker: 'Account', authTitle: 'Cloud login or guest mode', guestModeText: 'You are using guest mode. Tasks stay in this browser.', guestMode: 'Guest', cloudMode: 'Cloud', usernameLabel: 'Username', usernamePlaceholder: 'example: arthur', passwordLabel: 'Password', passwordPlaceholder: 'Password', login: 'Log in', signup: 'Create account', continueGuest: 'Continue as guest', logout: 'Log out', importGuest: 'Import guest tasks', welcome: 'Welcome, {username}', cloudModeText: 'Connected in cloud mode with Supabase.', accountCreated: 'Account created and connected.', loginSuccess: 'Logged in successfully.', logoutSuccess: 'Logged out successfully.', guestReady: 'Guest mode enabled.', invalidUsername: 'Invalid username: 3 to 24 characters, letters, numbers or underscore only.', invalidPassword: 'Password must contain at least 6 characters.', authError: 'Auth error: {message}', cloudLoadError: 'Unable to load cloud data.', cloudSaveError: 'Cloud save error.', importDone: 'Guest tasks imported into the cloud account.', importEmpty: 'No guest task to import.', categorySuggestion: 'Examples: Personal / Work / Projects', dueTimeLabel: 'Time', noTime: 'No time', dueDateInPast: 'You cannot create a task with a past deadline.', dueTodayNeedsTime: 'For today, add a future time.', dueTimeInPast: 'The selected time has already passed.', dueAt: 'Due', loading: 'Loading...', deleteAccount: 'Delete my account', deleteAccountConfirm: 'Do you really want to delete your account? This will permanently delete your cloud tasks.', deleteAccountSuccess: 'Account deleted successfully.', deleteAccountError: 'Error while deleting account: {message}', guestImportSuccess: 'Guest tasks imported automatically into your cloud account.', guestImportError: 'Automatic import error: {message}'
+,
+    editTaskTitle: 'Edit Task', taskLabel: 'Task', priorityLabel: 'Priority', tagsLabel: 'Tags', completedLabel: 'Completed', searchPlaceholder: 'Search…', filterPriorityLabel: 'Priority', filterTagLabel: 'Tag', filterDueDateLabel: 'Due Date', tagFilterPlaceholder: 'Filter by tag…'
+,
+    editTask: 'Edit',
+
+    invalidPriority: 'Invalid priority',
+    taskUpdated: 'Task updated successfully',
 });
 Object.assign(translations.it, {
     accountKicker: 'Account', authTitle: 'Accesso cloud o modalità ospite', guestModeText: 'Stai usando la modalità ospite. Le attività restano in questo browser.', guestMode: 'Ospite', cloudMode: 'Cloud', usernameLabel: 'Utente', usernamePlaceholder: 'esempio: giulia', passwordLabel: 'Password', passwordPlaceholder: 'Password', login: 'Accedi', signup: 'Crea account', continueGuest: 'Continua come ospite', logout: 'Esci', importGuest: 'Importa attività ospite', welcome: 'Benvenuto/a, {username}', cloudModeText: 'Connesso in modalità cloud con Supabase.', accountCreated: 'Account creato e connesso.', loginSuccess: 'Accesso riuscito.', logoutSuccess: 'Disconnessione riuscita.', guestReady: 'Modalità ospite attivata.', invalidUsername: 'Nome utente non valido: 3-24 caratteri, solo lettere, numeri o underscore.', invalidPassword: 'La password deve contenere almeno 6 caratteri.', authError: 'Errore di accesso: {message}', cloudLoadError: 'Impossibile caricare i dati cloud.', cloudSaveError: 'Errore durante il salvataggio cloud.', importDone: 'Attività ospite importate nell’account cloud.', importEmpty: 'Nessuna attività ospite da importare.', categorySuggestion: 'Esempi: Personale / Lavoro / Progetti', dueTimeLabel: 'Ora', noTime: 'Senza ora', dueDateInPast: 'Non puoi creare un’attività con scadenza passata.', dueTodayNeedsTime: 'Per oggi, aggiungi un orario futuro.', dueTimeInPast: 'L’orario scelto è già passato.', dueAt: 'Scadenza', loading: 'Caricamento...', deleteAccount: 'Elimina il mio account', deleteAccountConfirm: 'Vuoi davvero eliminare il tuo account? Questa azione eliminerà definitivamente le attività cloud.', deleteAccountSuccess: 'Account eliminato con successo.', deleteAccountError: 'Errore durante l’eliminazione dell’account: {message}', guestImportSuccess: 'Attività ospite importate automaticamente nell’account cloud.', guestImportError: 'Errore di importazione automatica: {message}'
+,
+    editTaskTitle: 'Modifica attività', taskLabel: 'Attività', priorityLabel: 'Priorità', tagsLabel: 'Tag', completedLabel: 'Completata', searchPlaceholder: 'Cerca…', filterPriorityLabel: 'Priorità', filterTagLabel: 'Tag', filterDueDateLabel: 'Scadenza', tagFilterPlaceholder: 'Filtra per tag…'
+,
+    editTask: 'Modifica',
+
+    invalidPriority: 'Priorità non valida',
+    taskUpdated: 'Attività modificata con successo',
 });
 Object.assign(translations.de, {
     accountKicker: 'Konto', authTitle: 'Cloud-Login oder Gastmodus', guestModeText: 'Du nutzt den Gastmodus. Aufgaben bleiben in diesem Browser.', guestMode: 'Gast', cloudMode: 'Cloud', usernameLabel: 'Benutzername', usernamePlaceholder: 'Beispiel: max', passwordLabel: 'Passwort', passwordPlaceholder: 'Passwort', login: 'Anmelden', signup: 'Konto erstellen', continueGuest: 'Als Gast fortfahren', logout: 'Abmelden', importGuest: 'Gastaufgaben importieren', welcome: 'Willkommen, {username}', cloudModeText: 'Verbunden im Cloud-Modus mit Supabase.', accountCreated: 'Konto erstellt und verbunden.', loginSuccess: 'Erfolgreich angemeldet.', logoutSuccess: 'Erfolgreich abgemeldet.', guestReady: 'Gastmodus aktiviert.', invalidUsername: 'Ungültiger Benutzername: 3 bis 24 Zeichen, nur Buchstaben, Zahlen oder Unterstrich.', invalidPassword: 'Das Passwort muss mindestens 6 Zeichen haben.', authError: 'Anmeldefehler: {message}', cloudLoadError: 'Cloud-Daten konnten nicht geladen werden.', cloudSaveError: 'Fehler beim Speichern in der Cloud.', importDone: 'Gastaufgaben wurden in das Cloud-Konto importiert.', importEmpty: 'Keine Gastaufgaben zum Importieren.', categorySuggestion: 'Beispiele: Persönlich / Arbeit / Projekte', dueTimeLabel: 'Uhrzeit', noTime: 'Ohne Uhrzeit', dueDateInPast: 'Du kannst keine Aufgabe mit vergangener Frist erstellen.', dueTodayNeedsTime: 'Für heute bitte eine zukünftige Uhrzeit hinzufügen.', dueTimeInPast: 'Die gewählte Uhrzeit ist bereits vorbei.', dueAt: 'Fällig', loading: 'Laden...', deleteAccount: 'Mein Konto löschen', deleteAccountConfirm: 'Möchtest du dein Konto wirklich löschen? Dadurch werden deine Cloud-Aufgaben dauerhaft gelöscht.', deleteAccountSuccess: 'Konto erfolgreich gelöscht.', deleteAccountError: 'Fehler beim Löschen des Kontos: {message}', guestImportSuccess: 'Gastaufgaben wurden automatisch in das Cloud-Konto importiert.', guestImportError: 'Fehler beim automatischen Import: {message}'
+,
+    editTaskTitle: 'Aufgabe bearbeiten', taskLabel: 'Aufgabe', priorityLabel: 'Priorität', tagsLabel: 'Tags', completedLabel: 'Erledigt', searchPlaceholder: 'Suchen…', filterPriorityLabel: 'Priorität', filterTagLabel: 'Tag', filterDueDateLabel: 'Fällig', tagFilterPlaceholder: 'Nach Tag filtern…'
+,
+    editTask: 'Bearbeiten',
+
+    invalidPriority: 'Ungültige Priorität',
+    taskUpdated: 'Aufgabe erfolgreich bearbeitet',
 });
 Object.assign(translations.es, {
     accountKicker: 'Cuenta', authTitle: 'Inicio cloud o modo invitado', guestModeText: 'Usas el modo invitado. Las tareas quedan en este navegador.', guestMode: 'Invitado', cloudMode: 'Cloud', usernameLabel: 'Usuario', usernamePlaceholder: 'ejemplo: lucia', passwordLabel: 'Contraseña', passwordPlaceholder: 'Contraseña', login: 'Iniciar sesión', signup: 'Crear cuenta', continueGuest: 'Continuar como invitado', logout: 'Cerrar sesión', importGuest: 'Importar tareas invitadas', welcome: 'Bienvenido/a, {username}', cloudModeText: 'Conectado en modo cloud con Supabase.', accountCreated: 'Cuenta creada y conectada.', loginSuccess: 'Sesión iniciada.', logoutSuccess: 'Sesión cerrada.', guestReady: 'Modo invitado activado.', invalidUsername: 'Usuario inválido: 3 a 24 caracteres, solo letras, números o guion bajo.', invalidPassword: 'La contraseña debe tener al menos 6 caracteres.', authError: 'Error de autenticación: {message}', cloudLoadError: 'No se pueden cargar los datos cloud.', cloudSaveError: 'Error al guardar en cloud.', importDone: 'Tareas invitadas importadas a la cuenta cloud.', importEmpty: 'No hay tareas invitadas para importar.', categorySuggestion: 'Ejemplos: Personal / Trabajo / Proyectos', dueTimeLabel: 'Hora', noTime: 'Sin hora', dueDateInPast: 'No puedes crear una tarea con fecha pasada.', dueTodayNeedsTime: 'Para hoy, añade una hora futura.', dueTimeInPast: 'La hora elegida ya pasó.', dueAt: 'Vence', loading: 'Cargando...', deleteAccount: 'Eliminar mi cuenta', deleteAccountConfirm: '¿Seguro que quieres eliminar tu cuenta? Esto eliminará definitivamente tus tareas cloud.', deleteAccountSuccess: 'Cuenta eliminada correctamente.', deleteAccountError: 'Error al eliminar la cuenta: {message}', guestImportSuccess: 'Tareas invitadas importadas automáticamente a la cuenta cloud.', guestImportError: 'Error de importación automática: {message}'
+,
+    editTaskTitle: 'Editar tarea', taskLabel: 'Tarea', priorityLabel: 'Prioridad', tagsLabel: 'Etiquetas', completedLabel: 'Completada', searchPlaceholder: 'Buscar…', filterPriorityLabel: 'Prioridad', filterTagLabel: 'Etiqueta', filterDueDateLabel: 'Vencimiento', tagFilterPlaceholder: 'Filtrar por etiqueta…'
+,
+    editTask: 'Editar',
+
+    invalidPriority: 'Prioridad inválida',
+    taskUpdated: 'Tarea actualizada con éxito',
 });
 Object.assign(translations.pt, {
     accountKicker: 'Conta', authTitle: 'Login cloud ou modo convidado', guestModeText: 'Você está no modo convidado. As tarefas ficam neste navegador.', guestMode: 'Convidado', cloudMode: 'Cloud', usernameLabel: 'Usuário', usernamePlaceholder: 'exemplo: pedro', passwordLabel: 'Senha', passwordPlaceholder: 'Senha', login: 'Entrar', signup: 'Criar conta', continueGuest: 'Continuar como convidado', logout: 'Sair', importGuest: 'Importar tarefas convidadas', welcome: 'Bem-vindo/a, {username}', cloudModeText: 'Conectado em modo cloud com Supabase.', accountCreated: 'Conta criada e conectada.', loginSuccess: 'Login realizado.', logoutSuccess: 'Sessão encerrada.', guestReady: 'Modo convidado ativado.', invalidUsername: 'Usuário inválido: 3 a 24 caracteres, apenas letras, números ou underscore.', invalidPassword: 'A senha deve ter pelo menos 6 caracteres.', authError: 'Erro de autenticação: {message}', cloudLoadError: 'Não foi possível carregar dados cloud.', cloudSaveError: 'Erro ao salvar no cloud.', importDone: 'Tarefas convidadas importadas para a conta cloud.', importEmpty: 'Nenhuma tarefa convidada para importar.', categorySuggestion: 'Exemplos: Pessoal / Trabalho / Projetos', dueTimeLabel: 'Hora', noTime: 'Sem hora', dueDateInPast: 'Não é possível criar uma tarefa com prazo passado.', dueTodayNeedsTime: 'Para hoje, adicione uma hora futura.', dueTimeInPast: 'A hora escolhida já passou.', dueAt: 'Prazo', loading: 'Carregando...', deleteAccount: 'Excluir minha conta', deleteAccountConfirm: 'Tem certeza de que deseja excluir sua conta? Isso excluirá permanentemente suas tarefas cloud.', deleteAccountSuccess: 'Conta excluída com sucesso.', deleteAccountError: 'Erro ao excluir a conta: {message}', guestImportSuccess: 'Tarefas convidadas importadas automaticamente para a conta cloud.', guestImportError: 'Erro de importação automática: {message}'
+,
+    editTaskTitle: 'Editar tarefa', taskLabel: 'Tarefa', priorityLabel: 'Prioridade', tagsLabel: 'Tags', completedLabel: 'Concluída', searchPlaceholder: 'Buscar…', filterPriorityLabel: 'Prioridade', filterTagLabel: 'Tag', filterDueDateLabel: 'Prazo', tagFilterPlaceholder: 'Filtrar par tag…'
+,
+    editTask: 'Editar',
+
+    invalidPriority: 'Prioridade inválida',
+    taskUpdated: 'Tarefa atualizada com sucesso',
 });
 Object.assign(translations.pl, {
     accountKicker: 'Konto', authTitle: 'Logowanie cloud albo tryb gościa', guestModeText: 'Używasz trybu gościa. Zadania zostają w tej przeglądarce.', guestMode: 'Gość', cloudMode: 'Cloud', usernameLabel: 'Użytkownik', usernamePlaceholder: 'przykład: adam', passwordLabel: 'Hasło', passwordPlaceholder: 'Hasło', login: 'Zaloguj', signup: 'Utwórz konto', continueGuest: 'Kontynuuj jako gość', logout: 'Wyloguj', importGuest: 'Importuj zadania gościa', welcome: 'Witaj, {username}', cloudModeText: 'Połączono w trybie cloud z Supabase.', accountCreated: 'Konto utworzone i połączone.', loginSuccess: 'Zalogowano pomyślnie.', logoutSuccess: 'Wylogowano pomyślnie.', guestReady: 'Tryb gościa włączony.', invalidUsername: 'Nieprawidłowy użytkownik: 3-24 znaki, tylko litery, cyfry lub podkreślenie.', invalidPassword: 'Hasło musi mieć co najmniej 6 znaków.', authError: 'Błąd logowania: {message}', cloudLoadError: 'Nie można załadować danych cloud.', cloudSaveError: 'Błąd zapisu w cloud.', importDone: 'Zadania gościa zaimportowane do konta cloud.', importEmpty: 'Brak zadań gościa do importu.', categorySuggestion: 'Przykłady: Osobiste / Praca / Projekty', dueTimeLabel: 'Godzina', noTime: 'Bez godziny', dueDateInPast: 'Nie można utworzyć zadania z minionym terminem.', dueTodayNeedsTime: 'Dla dzisiaj dodaj przyszłą godzinę.', dueTimeInPast: 'Wybrana godzina już minęła.', dueAt: 'Termin', loading: 'Ładowanie...', deleteAccount: 'Usuń moje konto', deleteAccountConfirm: 'Czy na pewno chcesz usunąć konto? To trwale usunie twoje zadania w chmurze.', deleteAccountSuccess: 'Konto usunięte pomyślnie.', deleteAccountError: 'Błąd podczas usuwania konta: {message}', guestImportSuccess: 'Zadania gościa automatycznie zaimportowane do konta cloud.', guestImportError: 'Błąd automatycznego importu: {message}'
+,
+    editTaskTitle: 'Edytuj zadanie', taskLabel: 'Zadanie', priorityLabel: 'Priorytet', tagsLabel: 'Tagi', completedLabel: 'Ukończone', searchPlaceholder: 'Szukaj…', filterPriorityLabel: 'Priorytet', filterTagLabel: 'Tag', filterDueDateLabel: 'Termin', tagFilterPlaceholder: 'Filtruj po tagu…'
+,
+    editTask: 'Edytuj',
+
+    invalidPriority: 'Nieprawidłowy priorytet',
+    taskUpdated: 'Zadanie zaktualizowane pomyślnie',
 });
 
 const storageKeys = {
@@ -120,7 +169,8 @@ const storageKeys = {
     language: 'todo-language',
     theme: 'todo-theme',
     notifications: 'todo-notifications-enabled',
-    notified: 'todo-notified-keys'
+    notified: 'todo-notified-keys',
+    tagFilter: 'todo-tag-filter'
 };
 
 const categoryBtnAdd = document.getElementById('addCategoryBtn');
@@ -212,6 +262,10 @@ let currentUser = null;
 let currentProfile = null;
 let currentMode = 'guest';
 let authInitialized = false;
+let taskWaitingEdit = null;
+let filterPriority = 'all';
+let filterTag = '';
+let filterDueDate = '';
 
 document.addEventListener('DOMContentLoaded', async () => {
     loadSettings();
@@ -341,6 +395,47 @@ function bindEvents() {
         });
     });
 
+    // ✅ Nouveaux filtres - Phase 1.2 fonctionnalités avancées
+    const searchTextInput = document.getElementById('searchTextInput');
+    if (searchTextInput) {
+        searchTextInput.addEventListener('input', () => renderTasks());
+        // Pas de valeur par défaut pour laisser l'input vide, mais afficher le placeholder traduit si utile
+    }
+
+    const priorityFilter = document.getElementById('priorityFilter');
+    if (priorityFilter) {
+        priorityFilter.addEventListener('change', (event) => {
+            filterPriority = event.target.value;
+            renderTasks();
+        });
+        priorityFilter.value = filterPriority || 'all';
+    }
+
+    const tagFilterInput = document.getElementById('tagFilter');
+    if (tagFilterInput) {
+        tagFilterInput.addEventListener('input', (event) => {
+            filterTag = event.target.value;
+            renderTasks();
+        });
+        const availableTags = new Set(tasks.flatMap(t => t.tags || []));
+        const savedTagFilter = localStorage.getItem(storageKeys.tagFilter);
+        if (savedTagFilter && availableTags.has(savedTagFilter)) {
+            tagFilterInput.value = savedTagFilter;
+            filterTag = savedTagFilter;
+        } else if (filterTag) {
+            tagFilterInput.value = filterTag;
+        }
+    }
+
+    const dueDateFilter = document.getElementById('dueDateFilter');
+    if (dueDateFilter) {
+        dueDateFilter.addEventListener('change', (event) => {
+            filterDueDate = event.target.value;
+            renderTasks();
+        });
+        dueDateFilter.value = filterDueDate || '';
+    }
+
     clearBtn.addEventListener('click', () => clearCompleted());
     deleteAllBtn.addEventListener('click', () => deleteAll());
     deleteCategoryBtn.addEventListener('click', () => deleteCurrentCategory());
@@ -367,6 +462,16 @@ function bindEvents() {
     priorityToC.addEventListener('click', () => setPriorityFromModal('C'));
     closePriorityModal.addEventListener('click', closePriorityChoiceModal);
     priorityModal.querySelector('[data-close-modal]').addEventListener('click', closePriorityChoiceModal);
+
+    // ✅ Modal édition tâche - boutons Enregistrer / Annuler (CSP compliant)
+    const saveEditBtn = document.getElementById('saveEditBtn');
+    if (saveEditBtn) saveEditBtn.addEventListener('click', updateTaskFromEditForm);
+    const closeEditModal = document.getElementById('closeEditModal');
+    if (closeEditModal) closeEditModal.addEventListener('click', closeEditTaskModal);
+    const editTaskModal = document.getElementById('editTaskModal');
+    if (editTaskModal) {
+        editTaskModal.querySelector('[data-close-modal]')?.addEventListener('click', closeEditTaskModal);
+    }
 
     startTimerBtn.addEventListener('click', startPomodoro);
     pauseTimerBtn.addEventListener('click', pausePomodoro);
@@ -1024,12 +1129,169 @@ async function setPriorityFromModal(priority) {
     closePriorityChoiceModal();
 }
 
+/**
+ * Rendu des tâches avec filtres avancés (Phase 1.2)
+ */
+/** ✅ Ouvrir formulaire éditeur avec pré-remplissage champs existants */
+function openEditModal(taskId) {
+    const task = tasks.find((t) => t.id === taskId);
+    if (!task) return console.error('Tâche introuvable pour édition:', taskId);
+    taskWaitingEdit = taskId;
+
+    const editTaskText = document.getElementById('editTaskText');
+    const editTaskPriority = document.getElementById('editTaskPriority');
+    const editTaskTags = document.getElementById('editTaskTags');
+    const editTaskDueDate = document.getElementById('editTaskDueDate');
+    const editTaskDueTime = document.getElementById('editTaskDueTime');
+    const editTaskCompleted = document.getElementById('editTaskCompleted');
+
+    if (editTaskText) editTaskText.value = task.text;
+    if (editTaskPriority) editTaskPriority.value = task.priority || 'B';
+    if (editTaskTags) editTaskTags.value = task.tags ? task.tags.join(', ') : '';
+    if (editTaskDueDate) {
+        if (task.dueDate) editTaskDueDate.value = task.dueDate;
+        else editTaskDueDate.value = '';
+    }
+    if (editTaskDueTime) editTaskDueTime.value = task.dueTime || '';
+    if (editTaskCompleted) editTaskCompleted.checked = Boolean(task.completed);
+
+    const modal = document.getElementById('editTaskModal');
+    if (modal) {
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
+    }
+    if (editTaskText) editTaskText.focus();
+}
+
+function closeEditTaskModal() {
+    const modal = document.getElementById('editTaskModal');
+    if (modal) {
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden', 'true');
+    }
+    taskWaitingEdit = null;
+}
+
+async function updateTaskFromEditForm() {
+    if (!taskWaitingEdit) return console.warn('Aucune tâche en attente d\'édition');
+    const taskIndex = tasks.findIndex(t => t.id === taskWaitingEdit);
+    if (taskIndex === -1) return;
+    const originalTask = tasks[taskIndex];
+
+    const editTaskText = document.getElementById('editTaskText');
+    const editTaskPriority = document.getElementById('editTaskPriority');
+    const editTaskTags = document.getElementById('editTaskTags');
+    const editTaskDueDate = document.getElementById('editTaskDueDate');
+    const editTaskDueTime = document.getElementById('editTaskDueTime');
+    const editTaskCompleted = document.getElementById('editTaskCompleted');
+
+    const text = editTaskText ? editTaskText.value.trim() : '';
+    if (!text) { showToast(t('enterTask')); return; }
+    const priority = editTaskPriority ? editTaskPriority.value : 'B';
+    if (!['A', 'B', 'C'].includes(priority)) { showToast(t('invalidPriority')); return; }
+
+    const tagsInput = editTaskTags ? editTaskTags.value : '';
+    const tags = tagsInput ? tagsInput.split(',').map(t => sanitizeText(t.trim()).slice(0, 24)).filter(Boolean) : [];
+    const dueDate = editTaskDueDate ? editTaskDueDate.value : '';
+    let dueTime = '';
+    if (editTaskDueTime && editTaskDueTime.value) {
+        const timeVal = editTaskDueTime.value;
+        if (/^\d{2}:\d{2}$/.test(timeVal)) dueTime = timeVal;
+    }
+    // ✅ Allow editing tasks with past due dates - only validate if NEW due date is set
+    if (dueDate && dueDate !== originalTask.dueDate) {
+        const dueValidation = validateDueDateTime(dueDate, dueTime);
+        if (!dueValidation.valid) { showToast(t(dueValidation.messageKey)); return; }
+    }
+    const completed = editTaskCompleted ? editTaskCompleted.checked : false;
+
+    const updatedTask = { ...originalTask, text, priority, tags, dueDate, dueTime, completed };
+
+    if (isCloudMode() && supabaseClient) {
+        try {
+            const updateData = { text: updatedTask.text, priority: updatedTask.priority, tags: updatedTask.tags, due_date: updatedTask.dueDate || null, due_time: updatedTask.dueTime || null, completed: updatedTask.completed };
+            const { data, error } = await supabaseClient.from('tasks').update(updateData).eq('id', taskWaitingEdit).eq('user_id', currentUser.id).select('id');
+            if (error) throw error;
+            if (!data || data.length === 0) throw new Error('Aucune ligne modifiée');
+            tasks[taskIndex] = updatedTask;
+            // ✅ NE PAS sauvegarder en localStorage en mode cloud (données source = Supabase)
+            renderAll();
+            showToast(t('taskUpdated'));
+        } catch (err) {
+            console.error('Erreur sauvegarde cloud:', err);
+            showToast(t('cloudSaveError', { message: err.message }));
+            return;
+        }
+    } else {
+        tasks[taskIndex] = updatedTask;
+        saveLocalData();
+        renderAll();
+        showToast(t('taskUpdated'));
+    }
+    closeEditTaskModal();
+}
+
+
 function getVisibleTasks() {
     if (!currentCategory) return [];
 
-    const categoryTasks = tasks.filter((task) => task.category === currentCategory);
-    if (currentFilter === 'active') return categoryTasks.filter((task) => !task.completed);
-    if (currentFilter === 'completed') return categoryTasks.filter((task) => task.completed);
+    let categoryTasks = tasks.filter((task) => task.category === currentCategory);
+
+    // ✅ Filtre standard: Toutes / Actives / Terminées (currentFilter)
+    if (currentFilter === 'active') {
+        categoryTasks = categoryTasks.filter(task => !task.completed);
+    } else if (currentFilter === 'completed') {
+        categoryTasks = categoryTasks.filter(task => task.completed);
+    }
+
+    // ✅ Filtre recherche textuelle sur titre + tags + catégoies
+    const searchInput = document.getElementById('searchTextInput');
+    const searchQuery = searchInput ? searchInput.value.toLowerCase() : '';
+    if (searchQuery) {
+        categoryTasks = categoryTasks.filter(task => 
+            task.text.toLowerCase().includes(searchQuery) ||
+            ((task.tags || []).some(tag => tag.toLowerCase().includes(searchQuery)) ||
+             currentCategory && currentCategory.toLowerCase().includes(searchQuery))
+        );
+    }
+
+    // ✅ Filtre par priorité (A, B, C) - si valeur définie différent de 'all'
+    const priorityFilter = filterPriority || 'all';
+    if (priorityFilter !== 'all') {
+        categoryTasks = categoryTasks.filter(task => (task.priority || 'B') === priorityFilter);
+    }
+
+    // ✅ Filtre par tag - si tag sélectionné (non vide, pas 'all')
+    const activeTag = filterTag || null;
+    if (activeTag && activeTag !== 'all') {
+        categoryTasks = categoryTasks.filter(task => 
+            task.tags && task.tags.some(t => t.toLowerCase() === activeTag.toLowerCase())
+        );
+    }
+
+    // ✅ Filtre par date échéance - si valeur définie
+    const dueDateFilter = filterDueDate || null;
+    if (dueDateFilter) {
+        if (dueDateFilter === 'today') {
+            // Tâches avec échéance aujourd'hui
+            const today = getTodayIso();
+            categoryTasks = categoryTasks.filter(task => task.dueDate && task.dueDate === today);
+        } else if (dueDateFilter === 'tomorrow') {
+            // Demain
+            const tomorrow = getRelativeIso(1);
+            categoryTasks = categoryTasks.filter(task => task.dueDate && task.dueDate === tomorrow);
+        } else if (dueDateFilter === 'overdue') {
+            // En retard + pas terminé - utilise isDeadlinePast pour cohérence
+            const today = getTodayIso();
+            categoryTasks = categoryTasks.filter(task => 
+                !task.completed && task.dueDate && isDeadlinePast(task.dueDate, task.dueTime)
+            );
+        } else if (['week', 'month'].includes(dueDateFilter)) {
+            // Cette semaine/cet mois - logique à implémenter selon convention projet
+            categoryTasks = categoryTasks; // Placeholder - compléter si besoin
+        }
+    }
+
     return categoryTasks;
 }
 
@@ -1103,7 +1365,17 @@ function renderTasks() {
         deleteBtn.textContent = t('deleteTask');
         deleteBtn.addEventListener('click', () => deleteTask(task.id));
 
+        // ✅ Bouton édition tâche
+        const editBtn = document.createElement('button');
+        editBtn.type = 'button';
+        editBtn.className = 'task-action-btn edit-task-btn';
+        editBtn.textContent = '✏️';
+        editBtn.title = t('editTask');
+        editBtn.setAttribute('aria-label', t('editTask'));
+        editBtn.addEventListener('click', () => openEditModal(task.id));
+
         actions.appendChild(priorityBtn);
+        actions.appendChild(editBtn);
         actions.appendChild(deleteBtn);
 
         li.appendChild(checkbox);
@@ -1232,6 +1504,27 @@ function populateDueTimes() {
     }
 
     dueTimeInput.value = previousValue || '';
+
+    // ✅ Populate edit modal time select too
+    const editDueTime = document.getElementById('editTaskDueTime');
+    if (editDueTime) {
+        const prevEdit = editDueTime.value;
+        editDueTime.innerHTML = '';
+        const emptyOpt = document.createElement('option');
+        emptyOpt.value = '';
+        emptyOpt.textContent = t('noTime');
+        editDueTime.appendChild(emptyOpt);
+        for (let hour = 0; hour < 24; hour += 1) {
+            for (let minute = 0; minute < 60; minute += 15) {
+                const value = `${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}`;
+                const option = document.createElement('option');
+                option.value = value;
+                option.textContent = value;
+                editDueTime.appendChild(option);
+            }
+        }
+        editDueTime.value = prevEdit || '';
+    }
 }
 
 async function clearCompleted() {
@@ -1343,6 +1636,14 @@ async function autoImportGuestData() {
     const categoriesBackup = JSON.stringify(guestCategories);
     const tasksBackup = JSON.stringify(guestTasks);
     
+    const importMarkerKey = 'guestImportCount_' + currentUser.id;
+    const previouslyImportedCount = parseInt(localStorage.getItem(importMarkerKey) || '0', 10);
+    
+    if (guestTasks.length <= previouslyImportedCount) {
+        console.log('Aucune nouvelle tâche invitée à importer');
+        return;
+    }
+
     try {
         const { data: existingCategories, error: loadCategoriesError } = await supabaseClient
             .from('categories')
@@ -1378,15 +1679,36 @@ async function autoImportGuestData() {
                 .select('id, name')
                 .single();
 
-            if (error) return nextCategoryMap.set(data.name.toLowerCase(), data); // Continue malgré erreur
+            if (error) {
+                console.warn('Erreur création catégorie:', error);
+                continue;
+            }
             createdCount++;
             nextCategoryMap.set(data.name.toLowerCase(), data);
         }
+
+        const { data: existingTasks, error: loadTasksError } = await supabaseClient
+            .from('tasks')
+            .select('id, text, category_id, created_at')
+            .eq('user_id', currentUser.id);
+
+        if (loadTasksError) throw loadTasksError;
+
+        const existingTaskKeys = new Set();
+        (existingTasks || []).forEach(t => {
+            const catName = Array.from(nextCategoryMap.entries()).find(([k, v]) => v.id === t.category_id)?.[0] || '';
+            existingTaskKeys.add(`${t.text.trim().toLowerCase()}|${catName}|${t.created_at?.slice(0,10)}`);
+        })
 
         const rows = guestTasks
             .map((task) => {
                 const category = nextCategoryMap.get(task.category.toLowerCase());
                 if (!category) return null;
+
+                const taskKey = `${task.text.trim().toLowerCase()}|${task.category.toLowerCase()}|${task.createdAt}`;
+                if (existingTaskKeys.has(taskKey)) {
+                    return null;
+                }
 
                 return {
                     user_id: currentUser.id,
@@ -1407,29 +1729,27 @@ async function autoImportGuestData() {
             const { error } = await supabaseClient.from('tasks').insert(rows);
             if (error) throw error;
             
-            // Reporte de stats au lieu de wipe brutal  
+            localStorage.setItem(importMarkerKey, guestTasks.length.toString())
+
             showToast(t('guestImportSuccess', { 
                 imported: rows.length, 
                 skipped: skippedCount + createdCount,
                 categories: createdCount
-            }));
+            }))
         } else {
-            // Tâches existantes - pas d'import possible !
-            const msg = rows.length > 0
-                ? t('guestImportNoImportPossible', { existing: guestTasks.length })
-                : t('guestImportSuccess');
-            showToast(msg);
+            localStorage.setItem(importMarkerKey, guestTasks.length.toString())
+            showToast(t('guestImportSuccess'))
         }
 
-        localStorage.setItem(storageKeys.categoriesBackup, categoriesBackup);
-        localStorage.setItem(storageKeys.tasksBackup, tasksBackup);
+        localStorage.setItem(storageKeys.categoriesBackup, categoriesBackup)
+        localStorage.setItem(storageKeys.tasksBackup, tasksBackup)
         // Pas de removeItem agressif - user garde ses données locales ! 
     } catch (error) {
-        console.error(error);
+        console.error(error)
         // Restore backup si échec critique  
-        localStorage.removeItem(storageKeys.categoriesBackup);
-        localStorage.removeItem(storageKeys.tasksBackup);
-        showToast(t('guestImportError', { message: error.message }));
+        localStorage.removeItem(storageKeys.categoriesBackup)
+        localStorage.removeItem(storageKeys.tasksBackup)
+        showToast(t('guestImportError', { message: error.message }))
     }
 }
 
@@ -1570,4 +1890,16 @@ function normalizeTimeValue(value) {
     if (!value) return '';
     const match = String(value).match(/^(\d{2}:\d{2})/);
     return match ? match[1] : '';
+}
+
+/** ✅ Sélectionner une option dans un select par sa valeur */
+function selectOptionByValue(selectElement, value) {
+    if (!selectElement || !value) return false;
+    for (let i = 0; i < selectElement.options.length; i++) {
+        if (selectElement.options[i].value === value) {
+            selectElement.selectedIndex = i;
+            return true;
+        }
+    }
+    return false;
 }
